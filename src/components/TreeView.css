@@ -1,0 +1,77 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: flex;
+  justify-content: flex-start; /* Смещаем дерево к левому краю */
+  padding: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 20px;
+  margin: 0;
+}
+
+li {
+  margin: 3px 0;
+}
+
+li div {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 3px 8px;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+li div:hover {
+  background-color: #f0f0f0;
+}
+
+li div button {
+  margin-right: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.collapse {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+  opacity: 0;
+}
+
+.expand {
+  max-height: 1000px; /* Устанавливаем достаточно большое значение */
+  transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
+  opacity: 1;
+}
+
+.tree-node {
+  display: flex;
+  align-items: center;
+}
+
+.tree-node-icon {
+  margin-right: 8px;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.tree-node-icon.expand {
+  transform: rotate(90deg);
+}
+
+.tree-node-label {
+  flex: 1;
+  font-size: 14px; /* Меньший размер текста */
+}
